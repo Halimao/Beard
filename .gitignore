@@ -12,3 +12,5 @@ docs/
 
 # Dotenv file
 .env
+
+deploy_beard_log.md
