@@ -15,8 +15,8 @@ contract Beard is ERC20 {
     function transfer(address recipient, uint256 amount) public override returns (bool) {
         address sender = super._msgSender();
         uint256 burnAmount = (amount * BURN_PERCENTAGE) / 1000;
-        super._update(sender, recipient, amount - burnAmount);
-        super._update(sender, BURN_ADDRESS, burnAmount);
+        super._transfer(sender, recipient, amount - burnAmount);
+        super._transfer(sender, BURN_ADDRESS, burnAmount);
         return true;
     }
 }
